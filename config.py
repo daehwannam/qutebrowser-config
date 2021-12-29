@@ -6,8 +6,10 @@
 config.load_autoconfig()
 
 c.url.searchengines = {"DEFAULT": "https://www.google.com/search?q={}"}
-c.url.start_pages = "https://www.google.com/"
+c.url.start_pages = ["https://www.google.com/"]
+c.url.default_page = "https://www.google.com/"
 
+# c.tabs.last_close = "close"
 
 def bind(key, *commands, mode='normal'):
     config.bind(key, ' ;; '.join(commands), mode=mode)

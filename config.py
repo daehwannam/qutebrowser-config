@@ -9,6 +9,10 @@ c.url.searchengines = {"DEFAULT": "https://www.google.com/search?q={}"}
 c.url.start_pages = ["https://www.google.com/"]
 c.url.default_page = "https://www.google.com/"
 
+# fix javascript button click problem
+# https://github.com/qutebrowser/qutebrowser/issues/4487#issuecomment-503755580
+c.content.javascript.can_access_clipboard = True
+
 # c.tabs.last_close = "close"
 
 def bind(key, *commands, mode='normal'):
@@ -16,3 +20,4 @@ def bind(key, *commands, mode='normal'):
 
 
 # bind('<Ctrl-r>', 'restart')
+

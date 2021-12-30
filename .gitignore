@@ -8,3 +8,6 @@ _tmp_*
 
 # python temporary file
 *.pyc
+
+# qutebrowser files
+autoconfig.yml

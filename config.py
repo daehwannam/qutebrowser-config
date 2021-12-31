@@ -5,7 +5,8 @@
 
 config.load_autoconfig()
 
-c.url.searchengines = {"DEFAULT": "https://www.google.com/search?q={}"}
+c.url.searchengines = {"DEFAULT": "https://www.google.com/search?q={}",
+                       "gg": "https://www.google.com/search?q={}"}
 c.url.start_pages = ["https://www.google.com/"]
 c.url.default_page = "https://www.google.com/"
 
@@ -13,11 +14,22 @@ c.url.default_page = "https://www.google.com/"
 # https://github.com/qutebrowser/qutebrowser/issues/4487#issuecomment-503755580
 c.content.javascript.can_access_clipboard = True
 
+# fix google sign-in problem
+# https://github.com/qutebrowser/qutebrowser/issues/5182#issuecomment-763300346
+if hasattr(c.content.site_specific_quirks, "enabled"):
+    c.content.site_specific_quirks.enabled = True
+else:
+    c.content.site_specific_quirks = True
+
 # c.tabs.last_close = "close"
 
-def bind(key, *commands, mode='normal'):
-    config.bind(key, ' ;; '.join(commands), mode=mode)
+config.unbind("<ctrl+q>")
 
+# Escape setting
+# https://gist.github.com/jumper047/ee821f789cd336b1105309f3ebf44f70
+ESC_BIND = 'clear-keychain ;; search ;; fullscreen --leave'
 
-# bind('<Ctrl-r>', 'restart')
-
+config.bind("<ctrl+g>", ESC_BIND, mode='normal')
+config.bind("<ctrl+g>", 'mode-leave', mode='command')
+config.bind("<ctrl+g>", 'mode-leave', mode='hint')
+config.bind("<ctrl+g>", 'mode-leave', mode='caret')

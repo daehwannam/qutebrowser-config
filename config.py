@@ -30,6 +30,7 @@ config.unbind("<ctrl+q>")
 ESC_BIND = 'clear-keychain ;; search ;; fullscreen --leave'
 
 config.bind("<ctrl+g>", ESC_BIND, mode='normal')
+config.bind("<ctrl+g>", 'mode-leave', mode='insert')
 config.bind("<ctrl+g>", 'mode-leave', mode='command')
 config.bind("<ctrl+g>", 'mode-leave', mode='hint')
 config.bind("<ctrl+g>", 'mode-leave', mode='caret')

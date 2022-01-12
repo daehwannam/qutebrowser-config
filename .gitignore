@@ -11,3 +11,4 @@ _tmp_*
 
 # qutebrowser files
 autoconfig.yml
+qsettings/

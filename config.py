@@ -7,7 +7,9 @@ config.load_autoconfig()
 
 c.url.searchengines = {"DEFAULT": "https://www.google.com/search?q={}",
                        "gg": "https://www.google.com/search?q={}",
-                       "nd": "https://en.dict.naver.com/#/search?query={}"}
+                       "nd": "https://en.dict.naver.com/#/search?query={}",
+                       "gk": "https://translate.google.co.kr/?hl=ko&sl=auto&tl=ko&text={}&op=translate",
+                       "ge": "https://translate.google.co.kr/?hl=ko&sl=auto&tl=en&text={}&op=translate"}
 c.url.start_pages = ["https://www.google.com/"]
 c.url.default_page = "https://www.google.com/"
 

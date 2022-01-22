@@ -26,7 +26,12 @@ else:
 
 # c.tabs.last_close = "close"
 
+# unbind closing shortcut
 config.unbind("<ctrl+q>")
+
+# tab move binding
+config.bind("gj", 'tab-move +', mode='normal')
+config.bind("gk", 'tab-move -', mode='normal')
 
 # Escape setting
 # https://gist.github.com/jumper047/ee821f789cd336b1105309f3ebf44f70

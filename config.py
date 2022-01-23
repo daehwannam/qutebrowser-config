@@ -72,3 +72,19 @@ c.bindings.commands['insert'].update({
     '<ctrl-/>': 'fake-key <Ctrl-z>',
     '<ctrl-r>': 'fake-key <Ctrl-y>'
 })
+
+# emacs binding for normal mode
+c.bindings.commands['normal'].update({
+    '<ctrl-n>': 'fake-key <Down>',
+    '<ctrl-p>': 'fake-key <Up>',
+
+    'n': 'search-next',
+    'p': 'search-prev',
+
+    'W': 'open -w',  # open new window
+
+    'ee': 'open -- {clipboard}',
+    'eE': 'open -- {primary}',
+    'Ee': 'open -t -- {clipboard}',
+    'EE': 'open -t -- {primary}',
+})

@@ -46,20 +46,10 @@ config.bind("<ctrl+g>", 'mode-leave', mode='prompt')
 
 # update the default vim binding
 c.bindings.commands['normal'].update({
-    '<ctrl-d>': 'scroll-px 0 40', # default is 'scoll-page 0 0.5'
-    '<ctrl-u>': 'scroll-px 0 -40',
+    '<ctrl-j>': 'scroll-px 0 40', # default is 'scoll-page 0 0.5'
+    '<ctrl-k>': 'scroll-px 0 -40',
     '<ctrl-f>': 'scroll-page 0 0.5', # default is 'scoll-page 0 1'
     '<ctrl-b>': 'scroll-page 0 -0.5',
-
-    'n': 'search-next',
-    'p': 'search-prev',
-
-    'W': 'open -w',  # open new window
-
-    'ee': 'open -- {clipboard}',
-    'eE': 'open -- {primary}',
-    'Ee': 'open -t -- {clipboard}',
-    'EE': 'open -t -- {primary}',
 })
 
 # emacs binding for insert mode

@@ -50,6 +50,8 @@ c.bindings.commands['normal'].update({
     '<ctrl-k>': 'scroll-px 0 -40',
     '<ctrl-f>': 'scroll-page 0 0.5', # default is 'scoll-page 0 1'
     '<ctrl-b>': 'scroll-page 0 -0.5',
+
+    ';m': 'hint all right-click',
 })
 
 # emacs binding for insert mode

@@ -44,6 +44,24 @@ config.bind("<ctrl+g>", 'mode-leave', mode='hint')
 config.bind("<ctrl+g>", 'mode-leave', mode='caret')
 config.bind("<ctrl+g>", 'mode-leave', mode='prompt')
 
+# update the default vim binding
+c.bindings.commands['normal'].update({
+    '<ctrl-d>': 'scroll-page 0 0.05', # default is 'scoll-page 0 0.5'
+    '<ctrl-u>': 'scroll-page 0 -0.05',
+    '<ctrl-f>': 'scroll-page 0 0.5', # default is 'scoll-page 0 1'
+    '<ctrl-b>': 'scroll-page 0 -0.5',
+
+    'n': 'search-next',
+    'p': 'search-prev',
+
+    'W': 'open -w',  # open new window
+
+    'ee': 'open -- {clipboard}',
+    'eE': 'open -- {primary}',
+    'Ee': 'open -t -- {clipboard}',
+    'EE': 'open -t -- {primary}',
+})
+
 # emacs binding for insert mode
 # https://gist.github.com/jumper047/ee821f789cd336b1105309f3ebf44f70
 c.bindings.commands['insert'].update({
